@@ -81,3 +81,7 @@ Further work can be divided into two topics. First, the numerical side: As the m
 
 
 
+# Code
+* `sweep.m`: provides the basic sweep function
+* `sweep_sin.m`: provides the sin-sweep function
+* `vary_*.m`: * = K0,E0,w etc.: Files that do the simulations by calling the above two functions and automatically generate plots.
