@@ -1,5 +1,14 @@
 function [Ca, Cb, I, E,Edc] = sweep_sin(K0, E0, alpha,gamma, n,h ,w,dE,Times) 
  % this is a function to be called somewhere else. 
+ % this is a function for the sin sweep
+ % K0 is base reaction rate
+ % E0 is dc component
+ % alpha is transfer coefficient
+ % gamma is the ratio of diffusion constants (D_b/D_a)
+ % dE is the amplitude of the oscillation
+ % w is the frequency
+ % n is number of steps
+ % h is stepsize
  
     if nargin==0
         n= 1e2
