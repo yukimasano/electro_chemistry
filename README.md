@@ -1,5 +1,4 @@
-## electro_chemistry: 
-### Chronoamperometry, Linear Sweep Voltametry and Sine Wave Voltametry
+## electro_chemistry: Chronoamperometry, Linear Sweep- and Sine Wave Voltametry
 (For code description see bottom)
 
 This project investigates the electro chemical redox-reactions that take place on a boundary, such as present in a battery. The physical reactions are modelled using Partical Differential Equations and numerical schemes (implemented in Matlab) are used to simulate them and validate analytical results. simulation for electro chemical redox-reactions 
