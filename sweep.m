@@ -1,5 +1,11 @@
 function [Ca, Cb, I, E] = sweep2(K0, E0, alpha,gamma, n,h ) 
  % this is a function for the normal sweep
+ % K0 is base reaction rate
+ % E0 is dc component
+ % alpha is transfer coefficient
+ % gamma is the ratio of diffusion constants (D_b/D_a)
+ % n is number of steps
+ % h is stepsize
     if nargin==0
         n= 1e2
         gamma=1;
