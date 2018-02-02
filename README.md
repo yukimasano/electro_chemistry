@@ -15,7 +15,7 @@ We model our system in one dimension:
 Equations:
 Our diffusion equations for particles A and B are given by:
 
-<img src="https://user-images.githubusercontent.com/29401818/35733788-a4d499d0-0816-11e8-8253-de83ab52f3e3.png" height ="50">
+<img src="https://user-images.githubusercontent.com/29401818/35733788-a4d499d0-0816-11e8-8253-de83ab52f3e3.png" height ="150">
 
 With boundary conditions:
 
@@ -26,25 +26,24 @@ With boundary conditions:
 And we additionally have the conservation of mass:
 
 <img src="https://user-images.githubusercontent.com/29401818/35733785-a461fb5a-0816-11e8-87dc-00ce566924c1.png" height ="50">
-. 
 
 ## Chronoamperometry
 Chronoamperometry is a method for obtaining characteristics about the chemicals. It borrows its name from the application of a potential and analysing the resulting cur- rent as a function of time. Here, the potential is increased by a single step presenting a rapid shift from a region where no faradaic processes can occur to one where all par- ticles at the surface are oxidised immediately. This will quickly lead to a build-up of a boundary layer as A particles are oxidising as fast as they arrive with diffusion and B particles do not further react. Hence, this leads to a decrease in current after the initial peak, converging to the diffusion-limited current with time. Observing the slope of the response and the effect of lowering the step size can yield insights into the chemical properties, namely the diffusion constants and the number of electrons transferred
 We only note that after some maths, we can derive [Cottrell's law](https://en.wikipedia.org/wiki/Cottrell_equation).
 
-<img src="https://user-images.githubusercontent.com/29401818/35734063-b29d9d18-0817-11e8-8816-91cddabc26e4.png" height ="200">
+<img src="https://user-images.githubusercontent.com/29401818/35734063-b29d9d18-0817-11e8-8816-91cddabc26e4.png" height ="250">
 
 ## Linear Sweep Voltrametry
 Instead of a rapid step increase in the potential, voltammetric methods allow differ- ent functions for the potential to be created and its response monitored. This will result in more complicated curves yielding information not only about diffusion rates and stoichiometry but also about the reversibility of a reaction and the detection of chemicals even in the order of parts-per-billion. For linear sweep voltammetry, the potential Edc(t) follows a ‘hat’ function with a linear increase and a subsequent linear decrease.
 After some maths, we get the [Butler-Volmer boundary condition](https://en.wikipedia.org/wiki/Butler%E2%80%93Volmer_equation) with which we can study the kinetics of the reactions:
 
-### varying k0
+### Varying k0
 We analyze the effects of varying the base reaction rate k0 on the I vs E(t) phasediagram:
 
 <img src="https://user-images.githubusercontent.com/29401818/35734300-93199f5e-0818-11e8-9d88-9dfd4360ef06.png" height ="300">
 
-### varying alpha
-We need note here, that the reactants do not have a single energy level, but instead follow a Boltzmann distribution because of the non-zero temperature. This can be incorporated by taking kred/ox ∝ exp(−∆G_red/ox ), RT
+### Varying alpha
+We need to note here, that the reactants do not have a single energy level, but instead follow a Boltzmann distribution because of the non-zero temperature. This can be incorporated by taking kred/ox ∝ exp(−∆G_red/ox ), RT
 where ∆G_red/ox is the difference in the (free Gibbs) energy of the reactant and the oxidant to the transition state, respectively. The gas constant R and the temperature T are constant. Not only is the energy of the electrons changed with the applied voltage, but also that of the transition state and so of ∆G+red/ox. We approximate this effect with a linear relationship:
 
 <img src="https://user-images.githubusercontent.com/29401818/35734474-358bcdc0-0819-11e8-8958-a7721969f7ec.png" height ="50">
@@ -57,21 +56,24 @@ where alpha is called the transfer coefficient and represents the influence of a
 We can see from the reverse sweep current response curve of α = 0.999, the peak for the reduction current has a very small amplitude. This is due to the fact that not ‘enough’ B particles have been produced to fully exploit the high rate and hence no high current is produced. By focusing on α = 0.1, we can see the opposite phenomenon: As the electrolyte initially only contains A particles, we have a very high peak oxidation current with around Ipeak ≈ 0.47. From the transition state theory we can interpret the case of α ≈ 0 as an transition state that is independent on the applied voltage (at least to the first order). This explains the high reaction rate as well the lower potential at which the peak occurs.
  
 ## Sine Wave Voltametry
- It's simple: now I(t) is a sine wave with amplitude ∆E and frequency ω.
+It's simple: now I(t) is a sine wave with amplitude ∆E and frequency ω plus a constant DC current. 
  
-### Vary ∆E
+### Varying ∆E
  
- <img src="https://user-images.githubusercontent.com/29401818/35734757-1e2798ca-081a-11e8-9b8d-13f92604fbc0.png" height="300">
+<img src="https://user-images.githubusercontent.com/29401818/35734757-1e2798ca-081a-11e8-9b8d-13f92604fbc0.png" height="300">
  
 We can observe two effects of increasing the sinusoidal amplitude: First, increasing the amplitude increases the peak current and shifts the peak position to lower values of Edc ≈ 2,4. As this shift is proportional to the amplitude, it is likely caused by the fact that E(t) will approach its Edc peak value earlier when an additional potential is applied. Second, in the case of ∆E = 5, we can see the oscillations of the response current having higher amplitudes in the positive direction. This can be explained by the increased ability to oxidise A particles but a limited ability to reduce B particles due to their relative shortage near the electrode.
 
 
-### Vary ω
+### Varying ω
  
- <img src="https://user-images.githubusercontent.com/29401818/35734793-3e2c76ae-081a-11e8-81ee-be96c1b790c7.png" height="300">
+<img src="https://user-images.githubusercontent.com/29401818/35734793-3e2c76ae-081a-11e8-81ee-be96c1b790c7.png" height="300">
 
 By introducing the sine wave potential, we increase the local slope of the applied potential and obtain
-higher peak currents from the [Randles-Seijvik equation](https://en.wikipedia.org/wiki/Randles%E2%80%93Sevcik_equation): I ∝ α ν, where ν is the slope of the potential.
+higher peak currents from the [Randles-Seijvik equation](https://en.wikipedia.org/wiki/Randles%E2%80%93Sevcik_equation): I ∝ sqrt(α ν), where ν is the slope of the potential. In our case:
+ν ∝ ω cos(ωt). We can confirm this relationship in our experiment:
+
+ <img src="https://user-images.githubusercontent.com/29401818/35735152-8cda96e0-081b-11e8-8f4d-58f05db382c7.png" height="300">
 
 
 ## Conclusion
